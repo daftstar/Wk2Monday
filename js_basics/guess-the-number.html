@@ -4,20 +4,22 @@
 </head>
 <body>
 
+
+
+<label>Pick a Number from 1-100:</label>
+<label id="response"></label>
+<br />
+<input id="user-input" type="text" />
+<input id="submit-button" type="button" value="Submit My Guess" />
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+
 <script type="text/javascript">
-  //alert('Hello World!');
-
-  //prompt is the ruby equivalent of gets.chomp
-  //var name = prompt("What's your name yo?")
-  //alert("Hey, it's nice to meet you" + name + " !!!")
-
   //this generates a number between 0 and 100 (0 not included)
-  
-
   var rand_number = parseInt(Math.random() * 100, 10) + 1;
   alert ("your random number is " + rand_number);
- 	
-
 
 
  var guess = function(x) 
@@ -51,56 +53,6 @@
 	 {
 	 	guess(user_number)
 	 }
-
-
-
-
-
-
-
-
-		
-
-
-
- 	// var new_numb = function (wrong_num)
-
-
-
-
-
-
-
-
- //  if (user_number = rand_number) 
- //  {
- //  	alert ("congratulations");
- //  	}
-
- //  else if (user_number != rand_number) 
- //  	{
- //  		if (user_number < rand_number)
- //  	{
- //  		alert ("too low, pick another number")
- //  		var user_number = prompt("tell me a new number");
- //  	}
-
- //  		else (user_number > rand_number)
- //  		{
- //  			alert ("too high, pick another number")
- //  			var user_number = prompt("tell me a new number");
- //  		}
-
-
-	// }
-
-
- 
-
-  
-
-
-
 
 </script>
 
