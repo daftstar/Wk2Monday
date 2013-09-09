@@ -19,7 +19,10 @@
 <br> 
 -----------
 <br>
-<label id="pick_a_number"></label>
+<label id="pick_a_new_number"></label>
+<br>
+-----------
+<br>
 <label id="yes_response"></label>
 
 
@@ -31,14 +34,7 @@
 // this generates a number between 0 and 100 (0 not included)
 var rand_number = parseInt(Math.random() * 100, 10) + 1;
 
-$('#submit-button').on('click', function () {
-  //alert("Yup, it's a button.");  <-- will now be turned into an on-page event
-  var input = $("#user-input").val();
-  $('#response_text').text("You typed in " + input + " for your guess");
-
-  // HERE'S THE IF / ELSE LOGIC 
-
-   var guess = function(x) 
+  var guess = function(x) 
  	{
 	 	if (rand_number == x)
 	 		{ 
@@ -58,17 +54,27 @@ $('#submit-button').on('click', function () {
  	}
 
 
- var user_number = prompt("tell me a number");
+$('#submit-button').on('click', function () {
+  var user_number = $("#user-input").val();
+  $('#response_text').text("You typed in " + user_number + " for your guess");
 
-	 if (user_number == rand_number)
+  if (user_number == rand_number)
 	 {
 	 	$('#yes_response').text("holy shite.. first try!");
 	 }
-
 	 else 
 	 {
 	 	guess(user_number)
 	 }
+
+
+  // HERE'S THE IF / ELSE LOGIC 
+
+
+
+
+// var user_number = prompt("tell me a number");
+
 });
 
 //alert("You typed in: " + input);  <--- this is an on-screen pop-up alert
