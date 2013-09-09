@@ -17,42 +17,57 @@
 
 
 <script type="text/javascript">
-  //this generates a number between 0 and 100 (0 not included)
-  var rand_number = parseInt(Math.random() * 100, 10) + 1;
-  alert ("your random number is " + rand_number);
+// $ indicates to the DOM that this code is jQuery
+// The below code replaces "Hi there" alert with in-page text.  
+$('#response').text("Hi there!");
 
 
- var guess = function(x) 
- 	{
-	 	if (rand_number == x)
-	 		{ 
-	 			alert("you got it");
-	 		}
-	 	else if (x < rand_number)
-	 		{
-	 			var new_guess = prompt("too low, go higher")
-	 			guess(new_guess)
-	 		}
 
-	  else if (x > rand_number)
-	 		{
-	 			var new_guess = prompt("too high, go lower")
-	 			guess(new_guess)
-	 		}		
- 	}
+$('#submit-button').on('click', function () {
+  //alert("Yup, it's a button.");  <-- will now be turned into an on-page event
+  var input = $("#user-input").val();
+ 	//alert("You typed in: " + input);  <--- this is an on-screen pop-up alert
+ 	// the below replaces the placeholder id=response with in browser text
+ 	$('#response').text("Hi there, you typed in: " + input);
+});
 
 
- var user_number = prompt("tell me a number");
+//   //this generates a number between 0 and 100 (0 not included)
+//   var rand_number = parseInt(Math.random() * 100, 10) + 1;
+//   alert ("your random number is " + rand_number);
 
-	 if (user_number == rand_number)
-	 {
-	 	alert("holy shite.. first try!")
-	 }
 
-	 else 
-	 {
-	 	guess(user_number)
-	 }
+//  var guess = function(x) 
+//  	{
+// 	 	if (rand_number == x)
+// 	 		{ 
+// 	 			alert("you got it");
+// 	 		}
+// 	 	else if (x < rand_number)
+// 	 		{
+// 	 			var new_guess = prompt("too low, go higher")
+// 	 			guess(new_guess)
+// 	 		}
+
+// 	  else if (x > rand_number)
+// 	 		{
+// 	 			var new_guess = prompt("too high, go lower")
+// 	 			guess(new_guess)
+// 	 		}		
+//  	}
+
+
+//  var user_number = prompt("tell me a number");
+
+// 	 if (user_number == rand_number)
+// 	 {
+// 	 	alert("holy shite.. first try!")
+// 	 }
+
+// 	 else 
+// 	 {
+// 	 	guess(user_number)
+// 	 }
 
 </script>
 
