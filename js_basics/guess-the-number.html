@@ -6,68 +6,123 @@
 
 
 
-<label>Pick a Number from 1-100:</label>
-<label id="response"></label>
-<br />
-<input id="user-input" type="text" />
-<input id="submit-button" type="button" value="Submit My Guess" />
 
+<label>Pick a Number from 1-100:</label>
+<br>
+<input id="user-input" type="text"/>
+<input id="submit-button" type="button" value="Submit My Guess"/>
+<br>
+<label id="random_number"></label>
+<br>
+<label id="response_text"></label>
+<br>
+<br> 
+-----------
+<br>
+<label id="pick_a_number"></label>
+<label id="yes_response"></label>
+
+
+<!--   - - - - - - - - - - - - - - - - - - - -  -->
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-
 <script type="text/javascript">
 // $ indicates to the DOM that this code is jQuery
-// The below code replaces "Hi there" alert with in-page text.  
-$('#response').text("Hi there!");
-
-
+// this generates a number between 0 and 100 (0 not included)
+var rand_number = parseInt(Math.random() * 100, 10) + 1;
 
 $('#submit-button').on('click', function () {
   //alert("Yup, it's a button.");  <-- will now be turned into an on-page event
   var input = $("#user-input").val();
- 	//alert("You typed in: " + input);  <--- this is an on-screen pop-up alert
- 	// the below replaces the placeholder id=response with in browser text
- 	$('#response').text("Hi there, you typed in: " + input);
+  $('#response_text').text("You typed in " + input + " for your guess");
+
+  // HERE'S THE IF / ELSE LOGIC 
+
+   var guess = function(x) 
+ 	{
+	 	if (rand_number == x)
+	 		{ 
+	 			$('#yes_response').text("you got it");
+	 		}
+	 	else if (x < rand_number)
+	 		{
+	 			var new_guess = prompt("too low, go higher")
+	 			guess(new_guess)
+	 		}
+
+	  else if (x > rand_number)
+	 		{
+	 			var new_guess = prompt("too high, go lower")
+	 			guess(new_guess)
+	 		}		
+ 	}
+
+
+ var user_number = prompt("tell me a number");
+
+	 if (user_number == rand_number)
+	 {
+	 	$('#yes_response').text("holy shite.. first try!");
+	 }
+
+	 else 
+	 {
+	 	guess(user_number)
+	 }
 });
 
-
-//   //this generates a number between 0 and 100 (0 not included)
-//   var rand_number = parseInt(Math.random() * 100, 10) + 1;
-//   alert ("your random number is " + rand_number);
-
-
-//  var guess = function(x) 
-//  	{
-// 	 	if (rand_number == x)
-// 	 		{ 
-// 	 			alert("you got it");
-// 	 		}
-// 	 	else if (x < rand_number)
-// 	 		{
-// 	 			var new_guess = prompt("too low, go higher")
-// 	 			guess(new_guess)
-// 	 		}
-
-// 	  else if (x > rand_number)
-// 	 		{
-// 	 			var new_guess = prompt("too high, go lower")
-// 	 			guess(new_guess)
-// 	 		}		
-//  	}
+//alert("You typed in: " + input);  <--- this is an on-screen pop-up alert
+// the below replaces the placeholder id=response with in browser text
+$('#random_number').text("The random number is: " + rand_number);
 
 
-//  var user_number = prompt("tell me a number");
 
-// 	 if (user_number == rand_number)
-// 	 {
-// 	 	alert("holy shite.. first try!")
-// 	 }
 
-// 	 else 
-// 	 {
-// 	 	guess(user_number)
-// 	 }
+
+
+
+
+
+// alert ("your random number is " + rand_number);
+
+
+
+
+
+ // var guess = function(x) 
+ // 	{
+	//  	if (rand_number == x)
+	//  		{ 
+	//  			alert("you got it");
+	//  		}
+	//  	else if (x < rand_number)
+	//  		{
+	//  			var new_guess = prompt("too low, go higher")
+	//  			guess(new_guess)
+	//  		}
+
+	//   else if (x > rand_number)
+	//  		{
+	//  			var new_guess = prompt("too high, go lower")
+	//  			guess(new_guess)
+	//  		}		
+ // 	}
+
+
+ // var user_number = prompt("tell me a number");
+
+	//  if (user_number == rand_number)
+	//  {
+	//  	alert("holy shite.. first try!")
+	//  }
+
+	//  else 
+	//  {
+	//  	guess(user_number)
+	//  }
+
+
+
 
 </script>
 
