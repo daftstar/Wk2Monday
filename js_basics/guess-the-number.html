@@ -1,0 +1,108 @@
+<html>
+<head>
+  <title>Guess the Number!</title>
+</head>
+<body>
+
+<script type="text/javascript">
+  //alert('Hello World!');
+
+  //prompt is the ruby equivalent of gets.chomp
+  //var name = prompt("What's your name yo?")
+  //alert("Hey, it's nice to meet you" + name + " !!!")
+
+  //this generates a number between 0 and 100 (0 not included)
+  
+
+  var rand_number = parseInt(Math.random() * 100, 10) + 1;
+  alert ("your random number is " + rand_number);
+ 	
+
+
+
+ var guess = function(x) 
+ 	{
+	 	if (rand_number == x)
+	 		{ 
+	 			alert("you got it");
+	 		}
+	 	else if (x < rand_number)
+	 		{
+	 			var new_guess = prompt("too low, go higher")
+	 			guess(new_guess)
+	 		}
+
+	  else if (x > rand_number)
+	 		{
+	 			var new_guess = prompt("too high, go lower")
+	 			guess(new_guess)
+	 		}		
+ 	}
+
+
+ var user_number = prompt("tell me a number");
+
+	 if (user_number == rand_number)
+	 {
+	 	alert("holy shite.. first try!")
+	 }
+
+	 else 
+	 {
+	 	guess(user_number)
+	 }
+
+
+
+
+
+
+
+
+		
+
+
+
+ 	// var new_numb = function (wrong_num)
+
+
+
+
+
+
+
+
+ //  if (user_number = rand_number) 
+ //  {
+ //  	alert ("congratulations");
+ //  	}
+
+ //  else if (user_number != rand_number) 
+ //  	{
+ //  		if (user_number < rand_number)
+ //  	{
+ //  		alert ("too low, pick another number")
+ //  		var user_number = prompt("tell me a new number");
+ //  	}
+
+ //  		else (user_number > rand_number)
+ //  		{
+ //  			alert ("too high, pick another number")
+ //  			var user_number = prompt("tell me a new number");
+ //  		}
+
+
+	// }
+
+
+ 
+
+  
+
+
+
+
+</script>
+
+</body>
+</html>
