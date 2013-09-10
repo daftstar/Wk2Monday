@@ -1,0 +1,34 @@
+<html>
+<head>
+  <title>Javascript Bare</title>
+</head>
+<body>
+
+<script type="text/javascript">
+  alert('Hello World!');
+
+  //String Variable
+  var name = "bob";
+
+  // Function variable
+  var sayHello = function () {
+  	alert("hrlloe");
+  };
+
+// creating our butler robot
+var serve = function(x){
+	x();
+};
+var greet = function() {
+	alert("HI");
+};
+
+serve(greet)
+serve(me) // <-- this won't do anything since (me) is not defined
+
+
+
+</script>
+
+</body>
+</html>

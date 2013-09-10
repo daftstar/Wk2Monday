@@ -1,0 +1,88 @@
+<html>
+<head>
+  <title>Javascript Bare</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+
+// this function asks the user to write something.  After that, the inputted string is converted to upcase
+
+// var yell = function(){
+//   user_string = prompt("tell me something ");
+//   alert(user_string.toUpperCase());
+// };
+
+var yell = function(lowercase){
+  return (lowercase.toUpperCase()) + "!";
+};
+
+//yell('what?') === 'WHAT?'
+// this should return true in the console.log
+
+var ask = function(question){
+  return ("Can you please " + question + "?");
+};
+
+
+// The below allows you to call a function on a passed parameter
+var serveMessage = function(message, message2, name_of_function){
+  return (message + ": " + name_of_function(message2));
+};
+
+
+
+//console.log('square:', square(7));
+
+
+
+
+// this function asks a user to input some text, and concatenates the upcase converted text w/ a ?
+// var ask = function(){
+//   ask_string = prompt("tell me something nice");
+//   alert(ask_string.toUpperCase() + "?");
+// };
+
+// ask("open the door")
+
+
+
+
+//   alert('Hello World!');
+
+//   //String Variable
+//   var name = "bob";
+
+//   // Function variable
+//   var sayHello = function () {
+//   	alert("hrlloe");
+//   };
+
+// // creating our butler robot
+// var serve = function(x){
+// 	x();
+// };
+// var greet = function() {
+// 	alert("HI");
+// };
+
+// serve(greet)
+// serve(me) // <-- this won't do anything since (me) is not defined
+
+
+// var serveMessage = function(x){
+//  x();
+// };
+// var greet = function() {
+//  alert("HI");
+// };
+
+// serve(greet)
+// serve(me) // <-- this won't do anything since (me) is not defined
+
+
+</script>
+
+</body>
+</html>
