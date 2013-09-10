@@ -10,40 +10,35 @@
 # 	end
 # end
 
-
-# class Recipe
-#   attr_accessor :something :something2
-# 	def initialize
-# 		@something = something
-# 		@something2 = something
-# 	end
-# end
-
-
-
 class Cookbook
-  attr_accessor :cookbook_title
+  attr_accessor :cookbook_title, :recipe_count
 		def initialize (cookbook_title)
 			@cookbook_title = cookbook_title
 			@recipes = []
+			@recipe_count = 0
 		end
 
 		def add_recipe(single_recipe)
 			# Add this recipe to the cookbook
 			# We have to convert the parameter being passed in as a string
 			@recipes << single_recipe
+			@recipe_count +=1
 		end
+
+
+		def display_recipe_count
+			puts "There are a total of #{@recipe_count} recipes in this cookbook."
+		end
+
 
 		def realtext_recipe
-			puts "Hey, in your #{@cookbook_title.to_s}:"
-			puts "Here are the recipes:"
+			puts "------------- RECIPE LISTING ---------------"
+			puts "In your cookbook '#{@cookbook_title.to_s}', you have the following recipes:"
 			
 			@recipes.each do |recipe| 
-				puts recipe.title
+				puts "- " + recipe.title
 			end
 		end
-
-
 end
 
 
@@ -56,9 +51,14 @@ class Recipes
 			@steps = steps
 		end
 
+
+
 		def real_text
-			puts "You've created a #{title} with the ingredients: #{ingredients.to_s}."
-			puts "Oh.. and these are the steps: #{steps}"
+			puts "You've created a #{title} with the ingredients: #{ingredients.join(', ')}."
+			puts "There are #{ingredients.count.to_s} ingredients in this recipe."
+			puts "There are #{steps.count.to_s} steps in this recipe." 
+			puts "These are the steps: #{steps.join(', ')}"
+			puts ""
 		end
 
 

@@ -24,4 +24,10 @@ chips_n_salsa.real_text
 mex_cuisine.add_recipe(burrito)
 mex_cuisine.add_recipe(chips_n_salsa)
 
+
+
 mex_cuisine.realtext_recipe
+puts ""
+puts ""
+mex_cuisine.display_recipe_count
+

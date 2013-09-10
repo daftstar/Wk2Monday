@@ -16,10 +16,7 @@
 <br>
 <label id="response_text"></label>
 <br>
-<br> 
------------
 <br>
-<label id="pick_a_new_number"></label>
 <br>
 -----------
 <br>
@@ -42,13 +39,13 @@ var rand_number = parseInt(Math.random() * 100, 10) + 1;
 	 		}
 	 	else if (x < rand_number)
 	 		{
-	 			var new_guess = prompt("too low, go higher")
+	 			var new_guess = prompt("too low, go higher") //replace this
 	 			guess(new_guess)
 	 		}
 
 	  else if (x > rand_number)
 	 		{
-	 			var new_guess = prompt("too high, go lower")
+	 			var new_guess = prompt("too high, go lower") //replace this
 	 			guess(new_guess)
 	 		}		
  	}
