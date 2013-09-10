@@ -16,11 +16,9 @@
 <br>
 <label id="response_text"></label>
 <br>
-<br>
-<br>
 -----------
 <br>
-<label id="yes_response"></label>
+<strong><label id="yes_response"></label></strong>
 
 
 <!--   - - - - - - - - - - - - - - - - - - - -  -->
@@ -31,22 +29,27 @@
 // this generates a number between 0 and 100 (0 not included)
 var rand_number = parseInt(Math.random() * 100, 10) + 1;
 
-  var guess = function(x) 
+  var guess = function(new_input) 
  	{
-	 	if (rand_number == x)
+	 	if (rand_number == new_input)
 	 		{ 
-	 			$('#yes_response').text("you got it");
-	 		}
-	 	else if (x < rand_number)
-	 		{
-	 			var new_guess = prompt("too low, go higher") //replace this
-	 			guess(new_guess)
+	 			$('#yes_response').text("you got it"); // <--- this will only work if we have a counter
 	 		}
 
-	  else if (x > rand_number)
+	 	else if (new_input < rand_number)
 	 		{
-	 			var new_guess = prompt("too high, go lower") //replace this
-	 			guess(new_guess)
+	 			$('#yes_response').text("too LOW, go HIGHER!");
+	 			var new_guess = $("#user-input").val();
+	 			//new_guess = prompt("too low, go higher") //replace this
+	 			//guess(new_guess)<-- this is no longer needed, since we're not just waiting for the user's browser input
+	 		}
+
+	  else if (new_input > rand_number)
+	 		{
+	 			$('#yes_response').text("too HIGH, go LOWER!");
+	 			var new_guess = $("#user-input").val();
+	 			//var new_guess = prompt("too high, go lower") //replace this
+	 			//guess(new_guess) <-- this is no longer needed, since we're not just waiting for the user's browser input
 	 		}		
  	}
 
@@ -57,21 +60,12 @@ $('#submit-button').on('click', function () {
 
   if (user_number == rand_number)
 	 {
-	 	$('#yes_response').text("holy shite.. first try!");
+	 	$('#yes_response').text("..first try!");
 	 }
 	 else 
 	 {
-	 	guess(user_number)
+	 	guess(user_number);
 	 }
-
-
-  // HERE'S THE IF / ELSE LOGIC 
-
-
-
-
-// var user_number = prompt("tell me a number");
-
 });
 
 //alert("You typed in: " + input);  <--- this is an on-screen pop-up alert
