@@ -1,0 +1,47 @@
+<html>
+
+<head>
+  <title>Javascript Functions</title>
+  <style type="text/css">
+    .spacer {
+      height: 2500px;
+    }
+    #box {
+      display: none;
+      background: blue;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="spacer">
+    Scroll down (all the way down)
+  </div>
+
+  <p id="box">Surprise!</p>
+
+
+  <p>
+    You see a box.
+    <a id="open-link" href="#">Open the box</a>
+  </p>
+
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  
+
+  <script type="text/javascript">
+    $('#open-link').on('click', function (event) {
+      //event.prevent ... prevents the page from scrolling up
+      event.preventDefault();
+      //the id "box" will now slowly show itself.  This seems to override the CSS display:none function. 
+      $('#box').show("slow");
+
+      //alert("lol it's locked.");
+      
+    });
+  </script>
+
+</body>
+</html>
