@@ -1,0 +1,51 @@
+<html>
+<head>
+  <title>Javascript Bare</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+
+// The second argument (2000) is the number of milliseconds to wait until calling the first argument -
+//the callback function. In our example, setTimeout will call greet after 2 seconds.
+
+
+var greet = function() {
+	alert("hi");
+};
+
+setTimeout(greet,2000);
+
+
+
+//setTimeout(function () {alert("hi")}, 2000);
+
+setTimeout(function () {
+  alert('hi');
+}, 2000);
+
+
+
+
+
+// var yell = function(lowercase){
+//   return (lowercase.toUpperCase()) + "!";
+// };
+
+// var ask = function(question){
+//   return ("Can you please " + question + "?");
+// };
+
+
+// // The below allows you to call a function on a passed parameter
+// var serveMessage = function(message, message2, name_of_function){
+//   return (message + ": " + name_of_function(message2));
+// };
+
+
+
+</script>
+
+</body>
+</html>

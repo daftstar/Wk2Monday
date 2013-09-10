@@ -18,8 +18,6 @@ var yell = function(lowercase){
   return (lowercase.toUpperCase()) + "!";
 };
 
-//yell('what?') === 'WHAT?'
-// this should return true in the console.log
 
 var ask = function(question){
   return ("Can you please " + question + "?");
@@ -32,54 +30,17 @@ var serveMessage = function(message, message2, name_of_function){
 };
 
 
-
-//console.log('square:', square(7));
-
+// the 2nd servemessage contains the functionality of YELL embedded in the code.  We do this when we just need to use the functionality once, and not store the info as a variable. 
 
 
+serveMessage('Bob','call me', yell); 
 
-// this function asks a user to input some text, and concatenates the upcase converted text w/ a ?
-// var ask = function(){
-//   ask_string = prompt("tell me something nice");
-//   alert(ask_string.toUpperCase() + "?");
-// };
-
-// ask("open the door")
+serveMessage('Bob','call me', function (lowercase) {
+  return (lowercase.toUpperCase()) + "!";
+});
 
 
 
-
-//   alert('Hello World!');
-
-//   //String Variable
-//   var name = "bob";
-
-//   // Function variable
-//   var sayHello = function () {
-//   	alert("hrlloe");
-//   };
-
-// // creating our butler robot
-// var serve = function(x){
-// 	x();
-// };
-// var greet = function() {
-// 	alert("HI");
-// };
-
-// serve(greet)
-// serve(me) // <-- this won't do anything since (me) is not defined
-
-
-// var serveMessage = function(x){
-//  x();
-// };
-// var greet = function() {
-//  alert("HI");
-// };
-
-// serve(greet)
-// serve(me) // <-- this won't do anything since (me) is not defined
 
 
 </script>
