@@ -8,7 +8,10 @@
     }
     #box {
       display: none;
-      background: blue;
+      background: #FFFF15;
+
+
+
     }
   </style>
 </head>
@@ -19,7 +22,11 @@
     Scroll down (all the way down)
   </div>
 
-  <p id="box">Surprise!</p>
+  <p id="box">Surprise!
+    <input id="submit-button" type="button" value="Close Box"/>
+
+
+  </p>
 
 
   <p>
@@ -33,14 +40,36 @@
 
   <script type="text/javascript">
     $('#open-link').on('click', function (event) {
+
       //event.prevent ... prevents the page from scrolling up
       event.preventDefault();
       //the id "box" will now slowly show itself.  This seems to override the CSS display:none function. 
-      $('#box').show("slow");
-
-      //alert("lol it's locked.");
-      
+      $('#box').show("slow");     
     });
+
+
+    // this closes the div upon button click
+    $('#submit-button').on('click', function (e) {
+      $('#box').hide("fast");
+    });
+
+
+
+    $(document).on('game-result', function (e, playerOne, playerTwo, result) {
+      if (result === 'one') {
+        alert(playerOne + ' has defeated ' + playerTwo);
+      }
+      else {
+        alert(playerTwo + ' has defeated ' + playerOne);
+      }
+    });
+
+    $(document).trigger('game-result', ['Alice', 'Bob', 'one']);
+    //if one, then bob wins,  if not 'one', alice wins.  dammit alice. 
+
+
+
+
   </script>
 
 </body>
