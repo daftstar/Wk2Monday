@@ -14,6 +14,10 @@
 <br>
 <label id="random_number"></label>
 <br>
+<em><label id="landmine"></label></em>
+<br>
+<br>
+<br>
 <label id="response_text"></label>
 <br>
 -----------
@@ -28,12 +32,18 @@
 // $ indicates to the DOM that this code is jQuery
 // this generates a number between 0 and 100 (0 not included)
 var rand_number = parseInt(Math.random() * 100, 10) + 1;
+var land_mine = parseInt(Math.random() * 100, 10) + 1;
+
+
+
+
 
   var guess = function(new_input) 
  	{
+	 	
 	 	if (rand_number == new_input)
 	 		{ 
-	 			$('#yes_response').text("you got it"); // <--- this will only work if we have a counter
+	 			$('#yes_response').text(""); // <--- this will only work if we have a counter
 	 		}
 
 	 	else if (new_input < rand_number)
@@ -56,21 +66,32 @@ var rand_number = parseInt(Math.random() * 100, 10) + 1;
 
 $('#submit-button').on('click', function () {
   var user_number = $("#user-input").val();
-  $('#response_text').text("You typed in " + user_number + " for your guess");
+  var diff = Math.abs(land_mine - ($("#user-input").val()));
 
-  if (user_number == rand_number)
+
+  $('#response_text').text(user_number + " was your guess. Be careful, it's " + diff + " steps away from blowing shit up" );
+
+  if(user_number == rand_number)
 	 {
-	 	$('#yes_response').text("..first try!");
+	 	$('#yes_response').text("..you got it!");
 	 }
+
+	 else if(user_number == land_mine)
+	 {
+	  $('#landmine').text("..YOU FOUND THE LANDMINE. YOU LOSE");
+	 }
+
 	 else 
 	 {
 	 	guess(user_number);
 	 }
+
 });
 
 //alert("You typed in: " + input);  <--- this is an on-screen pop-up alert
 // the below replaces the placeholder id=response with in browser text
 $('#random_number').text("The random number is: " + rand_number);
+$('#landmine').text("The landmine number is: " + land_mine);
 
 
 
