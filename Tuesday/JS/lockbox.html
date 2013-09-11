@@ -18,6 +18,10 @@
 
 <body>
 
+  <label id="clicks"></label>
+  <h1><label id="winner"></label></h1>
+
+
   <div class="spacer">
     Scroll down (all the way down)
   </div>
@@ -53,6 +57,25 @@
       $('#box').hide("fast");
     });
 
+       // initilize variable click to = 0
+    var click = 0
+      // on click should set lable with id click +1
+    $(document).on('click', function (e) { 
+      click += 1
+      $('#clicks').text("clicks=" + click)
+
+      if (click % 5 === 0){
+        $('#winner').text("NEW HIGH SCORE " + click)
+      }
+      else {$('#winner').text("")};
+      
+
+
+
+
+
+
+    });
 
 
     $(document).on('game-result', function (e, playerOne, playerTwo, result) {
